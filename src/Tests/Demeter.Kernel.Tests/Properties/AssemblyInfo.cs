@@ -7,8 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System;
 using System.Reflection;
 
-[assembly: AssemblyTitle("Demeter")]
-[assembly: AssemblyDescription("Main assembly for Demeter model and interactions.")]
+[assembly: AssemblyTitle("Demeter.Kernel.Tests")]
+[assembly: AssemblyDescription("Unit tests for Demeter.Kernel assembly.")]

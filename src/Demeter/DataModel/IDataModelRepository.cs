@@ -28,6 +28,7 @@ namespace Demeter.DataModel
         ///     Gets all the <see cref="IStorageType"/>.
         /// </summary>
         /// <returns>The available <see cref="IStorageType"/>.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "A method is better here - it might imply processing.")]
         IEnumerable<IStorageType> GetStorageTypes();
 
         /// <summary>
@@ -41,6 +42,7 @@ namespace Demeter.DataModel
         ///     Gets all the <see cref="FieldType"/>.
         /// </summary>
         /// <returns>The available <see cref="FieldType"/>.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "A method is better here - it might imply processing.")]
         IEnumerable<FieldType> GetFieldTypes();
 
         /// <summary>
@@ -54,6 +56,7 @@ namespace Demeter.DataModel
         ///     Gets all the <see cref="DocumentType"/>.
         /// </summary>
         /// <returns>The available <see cref="DocumentType"/>.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "A method is better here - it might imply processing.")]
         IEnumerable<DocumentType> GetDocumentTypes();
     }
 }

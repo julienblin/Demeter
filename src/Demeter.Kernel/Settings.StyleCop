@@ -1,0 +1,8 @@
+<StyleCopSettings Version="105">
+  <GlobalSettings>
+    <CollectionProperty Name="RecognizedWords">
+      <Value>Db</Value>
+      <Value>RavenDb</Value>
+    </CollectionProperty>
+  </GlobalSettings>
+</StyleCopSettings>

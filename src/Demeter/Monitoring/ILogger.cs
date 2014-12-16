@@ -80,6 +80,7 @@ namespace Demeter.Monitoring
         ///     The majority of errors falls into that category.
         /// </summary>
         /// <param name="message">The message.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", MessageId = "Error", Justification = "Error is ok here.")]
         void Error(object message);
 
         /// <summary>
@@ -90,6 +91,7 @@ namespace Demeter.Monitoring
         /// </summary>
         /// <param name="ex">The exception.</param>
         /// <param name="message">The message.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", MessageId = "Error", Justification = "Error is ok here.")]
         void Error(Exception ex, object message);
 
         /// <summary>
@@ -123,6 +125,11 @@ namespace Demeter.Monitoring
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void Debug(this ILogger logger, string format, params object[] args)
         {
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
             logger.Debug(SwallowErrorFormat(logger, format, args));
         }
 
@@ -135,6 +142,11 @@ namespace Demeter.Monitoring
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void Info(this ILogger logger, string format, params object[] args)
         {
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
             logger.Info(SwallowErrorFormat(logger, format, args));
         }
 
@@ -148,6 +160,11 @@ namespace Demeter.Monitoring
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void Warn(this ILogger logger, string format, params object[] args)
         {
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
             logger.Warn(SwallowErrorFormat(logger, format, args));
         }
 
@@ -162,6 +179,11 @@ namespace Demeter.Monitoring
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void Warn(this ILogger logger, Exception ex, string format, params object[] args)
         {
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
             logger.Warn(ex, SwallowErrorFormat(logger, format, args));
         }
 
@@ -176,6 +198,11 @@ namespace Demeter.Monitoring
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void Error(this ILogger logger, string format, params object[] args)
         {
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
             logger.Error(SwallowErrorFormat(logger, format, args));
         }
 
@@ -191,6 +218,11 @@ namespace Demeter.Monitoring
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void Error(this ILogger logger, Exception ex, string format, params object[] args)
         {
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
             logger.Error(ex, SwallowErrorFormat(logger, format, args));
         }
 
@@ -203,6 +235,11 @@ namespace Demeter.Monitoring
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void Fatal(this ILogger logger, string format, params object[] args)
         {
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
             logger.Fatal(SwallowErrorFormat(logger, format, args));
         }
 
@@ -216,6 +253,11 @@ namespace Demeter.Monitoring
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void Fatal(this ILogger logger, Exception ex, string format, params object[] args)
         {
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
             logger.Fatal(ex, SwallowErrorFormat(logger, format, args));
         }
 
@@ -228,6 +270,7 @@ namespace Demeter.Monitoring
         /// <param name="format">A composite format string.</param>
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         /// <returns>The result of <see cref="string.Format(string,object)"/>, or a safe version of it.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "OK here - we WANT to swallow the exception.")]
         private static string SwallowErrorFormat(ILogger logger, string format, params object[] args)
         {
             try

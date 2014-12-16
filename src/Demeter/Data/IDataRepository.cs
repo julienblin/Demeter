@@ -22,13 +22,13 @@ namespace Demeter.Data
         /// </summary>
         /// <param name="id">The id of the document to find.</param>
         /// <returns>The <see cref="Document"/>, or null if not found.</returns>
-        Document Get(Guid id);
+        Document GetDocument(Guid id);
 
         /// <summary>
         ///     Gets several documents by their ids.
         /// </summary>
         /// <param name="ids">The list of document ids to find.</param>
         /// <returns>The list of found documents.</returns>
-        IEnumerable<Document> Get(IEnumerable<Guid> ids);
+        IEnumerable<Document> GetDocuments(IEnumerable<Guid> ids);
     }
 }
